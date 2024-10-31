@@ -11,22 +11,27 @@ const aurora = {
 };
 
 // Affiche "… a … points de vie et … en force"
-
+console.log(`${aurora.nom} a ${aurora.sante} points de vie, ${aurora.force} en force`);
 // Crée une fonction décrire qui prend personnage en paramètre et renvoie la description du personnage
 // écris ta fonction décrire ici
-
+function decrire(personnage) {
+    return `${personnage.nom} a ${personnage.sante} points de vie, ${personnage.force} en force`;
+}
 // Utilise cette fonction pour afficher la description d'Aurora
-
+console.log(decrire(aurora))
 // Ajoute à présent cette fonction à l'intérieur de l'objet aurora
-const aurora = {
+const aurora2 = {
     nom: "Aurora",
     sante: 150,
     force: 25,
+    decrire(){
+        return `${aurora2.nom} a ${aurora2.sante} points de vie, ${aurora2.force} en force`;
+    },
     // renvoie la description du personnage
     // écris ton code ici
 };
 // Utilise à présent cette méthode pour afficher la description d'Aurora
-
+console.log(aurora2.decrire())
 /*
 EXERCICE 1 : Ajoute une méthode calcAge à john qui calcule son âge
 (en soustrayant sa date de naissance de 2019), le retourne et le stocke dans une propriété age.
@@ -51,7 +56,15 @@ EXERCICE 2 :
 - Ajoute une méthode à cet objet qui lui permet de calculer sa propre surface
 - Utilise cette méthode pour afficher sa surface dans la console
 */
-
+const rectangle ={
+    longueur:5,
+    largeur:3,
+    calcSurface(){
+        let surface = this.longueur*this.largeur;
+        return surface;
+    }
+}
+console.log(rectangle.calcSurface())
 /* **********************************
 * Les objets prédéfinis de JavaScript
 */

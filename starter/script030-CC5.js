@@ -40,3 +40,40 @@ du tableau (c'est comme cela qu'on calcule une moyenne).
 
 BONNE CHANCE 😀
 */
+
+const calculateurPourboire = {
+    factures: [124, 48, 268, 180, 42],
+    montantsFinaux: [],
+    calcPourboire(facture) {
+        for (let i = 0; i < this.factures.length; i++) {
+            let facture = this.factures[i];
+            let pourboires;
+            if (facture < 50 && facture > 0) {
+                pourboires = facture * 0.2;
+            } else if (facture < 200) {
+                pourboires = facture * 0.15;
+            } else if (facture >= 200) {
+                pourboires = facture * 0.1;
+            } else {
+                console.log("Erreur sur la valeur de la facture")
+            }
+
+            let montantFinal = facture + pourboires;
+
+            this.montantsFinaux.push(montantFinal);
+        }
+
+    }
+}
+
+calculateurPourboire.calcPourboire();
+
+console.log(calculateurPourboire.factures);
+console.log(calculateurPourboire.montantsFinaux);
+
+
+
+
+
+
+
